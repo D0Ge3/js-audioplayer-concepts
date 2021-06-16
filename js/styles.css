@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  height: 90%;
+}
+
+.player {
+  height: 10%;
+}
