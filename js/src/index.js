@@ -1,18 +1,23 @@
-// Test import of a JavaScript module
-import { example } from '@/js/example'
+import page from 'page'
 
-// Test import of an asset
-import webpackLogo from '@/images/webpack-logo.svg'
+const rootDiv = document.querySelector('#root')
+const parser = new DOMParser()
+const loadContent = (uri) => {
+  fetch(uri)
+    .then((response) => response.text())
+    .then((data) => {
+      const htmlDoc = parser.parseFromString(data, 'text/html')
 
-// Test import of styles
-import '@/styles/index.scss'
-
-// Appending to the DOM
-const logo = document.createElement('img')
-logo.src = webpackLogo
-
-const heading = document.createElement('h1')
-heading.textContent = example()
-
-const app = document.querySelector('#root')
-app.append(logo, heading)
+      rootDiv.innerHTML = htmlDoc.querySelector('#root').innerHTML
+    })
+}
+page('/', () => {
+  loadContent('./index.html')
+})
+page('/artist', () => {
+  loadContent('./artist.html')
+})
+page('/about', () => {
+  loadContent('./about.html')
+})
+page()
