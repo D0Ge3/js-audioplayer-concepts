@@ -1,9 +1,10 @@
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const { merge } = require('webpack-merge')
-
 const paths = require('./paths')
+const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
+
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
@@ -13,6 +14,14 @@ module.exports = merge(common, {
     publicPath: '/',
     filename: 'js/[name].[contenthash].bundle.js',
   },
+  plugins: [
+    // Extracts CSS into separate files
+    // Note: style-loader is for development, MiniCssExtractPlugin is for production
+    new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -24,7 +33,6 @@ module.exports = merge(common, {
             options: {
               importLoaders: 2,
               sourceMap: false,
-              modules: true,
             },
           },
           'postcss-loader',
@@ -33,16 +41,12 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [
-    // Extracts CSS into separate files
-    new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerPlugin(), '...'],
+    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
+    // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
+    // instead of having their own. This also helps with long-term caching, since the chunks will only
+    // change when actual code changes, not the webpack runtime.
     runtimeChunk: {
       name: 'runtime',
     },

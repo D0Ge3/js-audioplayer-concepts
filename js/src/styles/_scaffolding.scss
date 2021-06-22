@@ -13,12 +13,12 @@ body {
 }
 
 #root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  align-self: center;
-  height: 100vh;
+  overflow: auto;
+  height: 90vh;
+}
+#player {
+  overflow: hidden;
+  height: 10vh;
 }
 
 h1 {

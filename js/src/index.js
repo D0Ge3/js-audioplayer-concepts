@@ -1,4 +1,6 @@
 import page from 'page'
+// import '@/styles/index.scss'
+import './styles/index.scss'
 
 const rootDiv = document.querySelector('#root')
 const parser = new DOMParser()
