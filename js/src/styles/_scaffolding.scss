@@ -3,26 +3,28 @@ html {
   font-family: $font-family;
   background: $background-color;
   color: $font-color;
-  max-width: $page-width;
+  box-sizing: border-box;
   line-height: 1.4;
 }
 
 body {
   margin: 0;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
-#root {
+.root {
   overflow: auto;
   height: 90vh;
 }
-#player {
-  overflow: hidden;
-  height: 10vh;
+.player {
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  border-top: 1px solid #dcdcdc21;
+  align-items: center;
+  padding: 15px 0;
+  // width: 100%;
 }
 
-h1 {
-  margin: auto;
-  text-align: center;
-  max-width: 90vw;
-}
