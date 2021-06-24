@@ -41,9 +41,53 @@
     width: 0;
     height: 5px;
   }
+  &__container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 150px;
+  }
 }
 
 .audio-btn {
-  margin: 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 9px;
+  border: none;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:active {
+    opacity: 0.8;
+  }
+  &__prev, &__next {
+    svg {
+      fill: #b3b3b3;
+    }
+    &:hover {
+      svg {
+        path {
+          fill: #fff;
+          box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.2);
+        }
+        
+      }
+      
+    }
+  }
+  &__play, &__pause {   
+    background: #fff;
+    color: #000;
+
+    &:hover {
+      box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
+    }
+  }
 }
 

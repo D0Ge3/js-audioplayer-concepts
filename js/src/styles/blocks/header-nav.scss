@@ -1,0 +1,16 @@
+.header-nav {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  &__link {
+    color: #fff;
+    font-weight: 500px;
+    font-size: 20px;
+    text-decoration: none;
+    &:hover {
+      text-shadow: rgba(255, 255, 255, 0.8) 0 0 10px;
+    }
+  }
+}
