@@ -54,8 +54,11 @@ function switchTreck (numTreck) {
   audio.play()
 }
 
+
 btnPlay.addEventListener("click", () => {
   audio.play() // Запуск песни
+  btnPause.className += "audio-btn audio-btn__pause audio-btn__pause--show"
+  btnPlay.className = "audio-btn audio-btn__play audio-btn__play--hide"
   // Запуск интервала 
   audioPlay = setInterval(() => {
     // Получаем значение на какой секунде песня
@@ -80,6 +83,8 @@ btnPlay.addEventListener("click", () => {
 btnPause.addEventListener("click", () => {
   audio.pause() // Останавливает песню
   clearInterval(audioPlay) // Останавливает интервал
+  btnPlay.className = "audio-btn audio-btn__play audio-btn__play"
+  btnPause.className += "audio-btn audio-btn__pause audio-btn__pause"
 })
 
 btnPrev.addEventListener("click", () => {

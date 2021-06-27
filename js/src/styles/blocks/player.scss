@@ -15,6 +15,7 @@
   &__img {
     width: 90px;
     height: 90px;
+    border-radius: 50%;
   }
   &__info {
     display: flex;
@@ -76,9 +77,7 @@
           fill: #fff;
           box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.2);
         }
-        
       }
-      
     }
   }
   &__play, &__pause {   
@@ -89,5 +88,44 @@
       box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
     }
   }
+  &__pause {
+    display: none;
+    &--show {
+      display: block;
+    }
+  }
+  &__play {
+    &--hide {
+      display: none;
+    }
+  }
 }
 
+.volume {
+  &__plus, &__minus {
+    background: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  &__plus {
+    &:hover {
+      svg {
+        path {
+          fill: #fff;
+          box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+  }
+  &__minus {
+    &:hover {
+      svg {
+        fill: #fff;
+        path {
+          box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.2);
+        }
+        
+      }
+    }
+  }
+}
