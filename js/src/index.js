@@ -32,9 +32,17 @@ const btnPrev = document.querySelector("#player-prev")   // Берём кноп�
 const btnNext = document.querySelector("#player-next")   // Берём кнопку переключение следующего трека
 const btnVolMinus = document.querySelector("#volume__minus")
 const btnVolPlus = document.querySelector("#volume__plus")
+
+
+const player = document.querySelector("#player")
+
+
+
+
 let audioPlay
 
 const playlist = [
+  'https://file-examples-com.github.io/uploads/2017/11/file_example_MP3_700KB.mp3',
   'https://rss.art19.com/episodes/b243d284-1b4f-4b15-99f1-e2a5d1fe8c86.mp3?rss_browser=BAhJIglKYXZhBjoGRVQ%3D--631732772f14ff418ee41471e1d52549d5878e4a',
   'https://rss.art19.com/episodes/2106301c-0a16-40a5-91e5-ab428cdbbe5a.mp3',
   'https://rss.art19.com/episodes/e6527fc1-cf49-438a-af03-032d48d09251.mp3'
@@ -45,6 +53,10 @@ let treck // Переменная с индексом трека
 // Событие перед загрузкой страницы
 window.onload = function() {
   treck = 0 // Присваиваем переменной ноль
+  const showPlayerBtn = document.querySelector("#show-player")
+  showPlayerBtn.addEventListener("click", () => {
+    player.className = "player"
+  })
 }
 
 function switchTreck (numTreck) {

@@ -16,15 +16,18 @@ body {
 
 .root {
   overflow: auto;
-  height: 90vh;
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 .player {
-  flex-grow: 1;
+  flex-grow: 0;
   flex-shrink: 0;
   display: flex;
   border-top: 1px solid #dcdcdc21;
   align-items: center;
   padding: 15px 0;
-  // width: 100%;
+  &--hide {
+    display: none;
+  }
 }
 
