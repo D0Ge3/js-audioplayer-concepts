@@ -1,0 +1,12 @@
+.author-block {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  &__photo {
+    margin-bottom: 20px;
+  }
+  &__name {
+    font-size: 20px;
+    font-weight: 500;
+  }
+}

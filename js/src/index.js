@@ -30,6 +30,8 @@ const btnPlay = document.querySelector("#player-play")   // Берём кноп�
 const btnPause = document.querySelector("#player-pause") // Берём кнопку паузы
 const btnPrev = document.querySelector("#player-prev")   // Берём кнопку переключения предыдущего трека
 const btnNext = document.querySelector("#player-next")   // Берём кнопку переключение следующего трека
+const btnVolMinus = document.querySelector("#volume__minus")
+const btnVolPlus = document.querySelector("#volume__plus")
 let audioPlay
 
 const playlist = [
@@ -106,5 +108,17 @@ btnNext.addEventListener("click", () => {
   } else { // Иначе
     treck = 0 // Присваиваем ей ноль
     switchTreck(treck) // Меняем песню
+  }
+})
+
+btnVolPlus.addEventListener("click", () => {
+  if (audio.volume < 1) {
+    audio.volume += 0.1
+  }
+})
+
+btnVolMinus.addEventListener("click", () => {
+  if (audio.volume > 0.1) {
+    audio.volume -= 0.1
   }
 })

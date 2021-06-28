@@ -1,0 +1,45 @@
+.interview-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 10px 0px;
+  &:hover {
+    background: #202020;
+  }
+  &__img {
+    margin-right: 20px;
+  }
+  &__name {
+
+  }
+}
+
+.interview-item__index {
+    align-self: center;
+    box-sizing: border-box;
+    display: flex;
+    
+    width: 60px;
+    padding-left: 15px;
+ 
+  &--index {
+    padding-left: 10px;
+  }
+  &--play-pause {
+    background: transparent;
+    border: none;
+    color: #fff;
+    display: none;
+    cursor: pointer;
+  }
+  &:hover {
+    .interview-item__index--index {
+      display: none;
+    }
+    .interview-item__index--play-pause {
+      display: block;
+    }
+
+  }
+}
