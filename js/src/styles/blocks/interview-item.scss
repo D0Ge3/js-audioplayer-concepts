@@ -11,7 +11,11 @@
     margin-right: 20px;
   }
   &__name {
-
+    display: block;
+    max-width: 700px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 
