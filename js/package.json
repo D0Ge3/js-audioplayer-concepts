@@ -7,12 +7,11 @@
   "author": "Tania Rascia",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
+    "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint . src config || true",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "start": "node server.js"
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [
     "webpack",
