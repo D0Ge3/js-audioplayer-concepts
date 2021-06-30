@@ -22,7 +22,6 @@ class Player {
       this.audioEl.play()
     }
   play() {
-    console.log(this);
     this.audioEl.src = this.playlist[this.curentTrackInd]
     this.audioEl.play()
     this.btnPause.className += "audio-btn audio-btn__pause audio-btn__pause--show"
