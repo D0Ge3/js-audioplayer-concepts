@@ -1,4 +1,5 @@
 {
+  "homepage": "http://D0Ge3.github.io/js-audioplayer-concepts",
   "name": "webpack-boilerplate",
   "version": "2.0.1",
   "description": "Sensible webpack 5 boilerplate using Babel and PostCSS with a hot dev server and an optimized production build.",
@@ -8,7 +9,9 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
-    "lint": "eslint . src config || true"
+    "lint": "eslint . src config || true",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [
     "webpack",
@@ -32,6 +35,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-webpack-plugin": "^2.1.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.4.0",
     "node-sass": "^5.0.0",
