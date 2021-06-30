@@ -107,12 +107,12 @@ window.onload = () => {
         rootDiv.innerHTML = htmlDoc.querySelector('#root').innerHTML
       })
   }
-  page('/', () => {
+  page('/js-audioplayer-concepts', () => {
     loadContent('./index.html').then(() => {
       addListenersToHeader()
     })
   })
-  page('/artist', () => {
+  page('/js-audioplayer-concepts/artist', () => {
     loadContent('./artist.html').then(() => {
       const tracksPlayBtns = document.querySelectorAll("#play-pause-track")
       const allTracks = Array.from(tracksPlayBtns).map((trackPlayBtn) => trackPlayBtn.parentElement.getAttribute("data-url"))
@@ -130,7 +130,7 @@ window.onload = () => {
     })
   
   })
-  page('/about', () => {
+  page('/js-audioplayer-concepts/about', () => {
     loadContent('./about.html').then(() => {
       addListenersToHeader()
     })
